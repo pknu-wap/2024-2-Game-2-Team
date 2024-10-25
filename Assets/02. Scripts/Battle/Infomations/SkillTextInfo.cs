@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // 각 스킬별 이름과 설명을 담아두는 클래스 (적의 다음 행동을 띄울 때 사용)

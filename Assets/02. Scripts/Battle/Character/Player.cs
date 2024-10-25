@@ -1,7 +1,3 @@
-// 김민철
-using DG.Tweening;
-using UnityEngine;
-
 public class Player : Character
 {
     #region 싱글톤

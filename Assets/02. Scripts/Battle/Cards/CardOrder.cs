@@ -1,6 +1,4 @@
 // 김동건
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CardOrder : MonoBehaviour
