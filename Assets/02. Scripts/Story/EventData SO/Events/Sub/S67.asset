@@ -15,7 +15,7 @@ MonoBehaviour:
   eventID: 1
   delay: 10
   startIndex: 867
-  endIndex: 873
+  endIndex: 876
   relationEvent: []
   nextEvent: {fileID: 0}
   addEvent:
