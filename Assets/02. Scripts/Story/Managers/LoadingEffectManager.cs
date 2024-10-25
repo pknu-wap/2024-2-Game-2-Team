@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Threading.Tasks;
 using DG.Tweening;
 using System.Linq;
 

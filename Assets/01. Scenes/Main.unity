@@ -10944,7 +10944,7 @@ MonoBehaviour:
   processableSubEventList: []
   startEventList: {fileID: 11400000, guid: 1a2ac0fbe99b9ec4d9e9a2d19a435e7f, type: 2}
   incarnageSubEventList: {fileID: 11400000, guid: e606635426abfae4088a880d6e9fbd72, type: 2}
-  mainRate: 30
+  mainRate: 0
   IllustsObjects:
   - {fileID: 1319129626}
   - {fileID: 1031547556}
@@ -20229,21 +20229,27 @@ MonoBehaviour:
   bgmNames:
   - Zombie Town
   - Zombie Battle
+  - Soncoku
+  - Sad Soncoku
   - Incarnage Main
   - Incarnage Battle
+  - Invade With K
   - Incarnage Boss
+  - Die of Jack
   - Rescue Sophia
-  - Ending
   - Epilogue
   bgmArray:
   - {fileID: 8300000, guid: 8ec74fc6097edb448b6d5e4b9101cc83, type: 3}
   - {fileID: 8300000, guid: 9fad8d9a5d8fdc741bde027afa4bbbc0, type: 3}
+  - {fileID: 8300000, guid: 967af8b11f904654dbcaa5b35f960e78, type: 3}
+  - {fileID: 8300000, guid: a459cf212d2522840bfd23ebd364e632, type: 3}
   - {fileID: 8300000, guid: 08afbd21d1e788240a292211fad33e62, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 0a358708ffbac3745afddd7fd3ad465b, type: 3}
+  - {fileID: 8300000, guid: ef24c25fccbe55643925ed179be167b3, type: 3}
   - {fileID: 8300000, guid: a2458dd3fe7111545a5ced4a0aa37223, type: 3}
+  - {fileID: 8300000, guid: d41c2d3cb32d2f24c9099e970229944b, type: 3}
   - {fileID: 8300000, guid: ad03ba0edee918044a7544763b2ae473, type: 3}
   - {fileID: 8300000, guid: 3670824af5b394044a07a44d7390931a, type: 3}
-  - {fileID: 8300000, guid: 9573f2aaf9f8a5e43bfd884fcffbce2b, type: 3}
 --- !u!82 &919981847
 AudioSource:
   m_ObjectHideFlags: 0

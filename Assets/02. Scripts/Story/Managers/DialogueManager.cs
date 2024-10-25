@@ -786,7 +786,7 @@ public class DialogueManager : MonoBehaviour
     private void EnrollSpecialEvents()
     {
         specialEvents["서브스토리 교체"] = SetIncarnageSubStory;
-        specialEvents["에너지파 획득"] = GetEnergyBeamCard;
+        specialEvents["덱 비우기"] = ClearDeck;
     }
 
     // 특수 이벤트를 실행한다.
@@ -810,12 +810,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // 덱을 모두 버리고 에너지파를 넣는다.
-    private void GetEnergyBeamCard()
+    // 덱을 모두 버린다.
+    private void ClearDeck()
     {
         CardManager.Instance.ClearDeck();
-
-        CardManager.Instance.AddCardToDeck("에너지파");
     }
     #endregion 특수 이벤트
 
