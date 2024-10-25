@@ -11037,7 +11037,7 @@ MonoBehaviour:
   processableSubEventList: []
   startEventList: {fileID: 11400000, guid: 30220a4d6185339419d5d5dc91d01130, type: 2}
   incarnageSubEventList: {fileID: 11400000, guid: e606635426abfae4088a880d6e9fbd72, type: 2}
-  mainRate: 100
+  mainRate: 20
   IllustsObjects:
   - {fileID: 1319129626}
   - {fileID: 1031547556}

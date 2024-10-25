@@ -87,3 +87,5 @@ ProjectSettings/ShaderGraphSettings.asset
 /.vscode
 /ProjectSettings
 .vscode/settings.json
+
+Assets/OuterAsset*
