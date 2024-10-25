@@ -14,13 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listName: DefaultDeck
   items:
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
-  - {fileID: 11400000, guid: 8e8afc88f3b1f0d428297b2489a4da68, type: 2}
+  - {fileID: 11400000, guid: 902cc778acf176046bc96027f5665db0, type: 2}

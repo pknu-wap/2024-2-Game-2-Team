@@ -48,6 +48,7 @@ public class SceneMoveButton : MonoBehaviour
 
         // 버튼 텍스트 투명도
         GetComponentInChildren<TMP_Text>().alpha = 0.5f;
+        GetComponent<Button>().interactable = false;
     }
 
     public void ToggleAlertPanel()
