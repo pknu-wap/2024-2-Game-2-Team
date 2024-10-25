@@ -12,6 +12,7 @@ TagManager:
   - Log Button Icon
   - Speed Up Button
   - Loading Scene
+  - Ending Panel
   layers:
   - Default
   - TransparentFX
