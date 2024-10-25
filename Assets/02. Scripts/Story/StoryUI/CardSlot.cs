@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CardSlot : MonoBehaviour
@@ -18,6 +17,19 @@ public class CardSlot : MonoBehaviour
         illust.sprite = cardData.sprite;
         nameTMP.text = cardData.name;
         costTMP.text = cardData.cost.ToString();
-        descriptionTMP.text = cardData.description; 
+        descriptionTMP.text = SetDamageDescription(cardData.description);
+    }
+
+    private string SetDamageDescription(string originText)
+    {
+        string result = originText;
+
+        for (int i = 0; i < cardData.skills.Length; i++)
+        {
+            // "damage + 해당하는 스킬의 인덱스"인 부분을 대체
+            result = result.Replace("damage" + i, cardData.skills[i].amount.ToString());
+        }
+
+        return result;
     }
 }
