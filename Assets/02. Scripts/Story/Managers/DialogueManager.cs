@@ -127,6 +127,9 @@ public class DialogueManager : MonoBehaviour
     [Header("배경 이미지 데이터")]
     public Image    storyBackgroundObject;
     public Image    battleBackgroundObject;
+
+    [Header("엔딩")]
+    private EndingPanel endingPanel;
     #endregion 변수
 
     private void Awake()
@@ -169,6 +172,7 @@ public class DialogueManager : MonoBehaviour
         storyBackgroundObject = GameObject.Find("Story BG").GetComponent<Image>();
         battleBackgroundObject = GameObject.Find("Battle BG").GetComponent<Image>();
         notification = GameObject.Find("Story Notification Panel").GetComponent<StoryNotification>();
+        endingPanel = GameObject.FindWithTag("Ending Panel").GetComponent<EndingPanel>();
     }
 
     // 시작 이벤트 리스트를 전체 이벤트 리스트에 가져온다.
@@ -239,6 +243,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // 끝나면 엔딩.
+        endingPanel.Ending(endingName);
     }
 
     // 이벤트를 진행한다.
@@ -308,9 +313,12 @@ public class DialogueManager : MonoBehaviour
                 // 딜레이를 감소시킨다.
                 ProcessDelay(loadedEvent);
 
-                //화면 전환 효과를 준다.
-                yield return StartCoroutine(LoadingEffectManager.Instance.FadeOut(transitionDuration));
-                yield return new WaitForSeconds(transitionDuration / 2);
+                if(isGameCleared == false)
+                {
+                    //화면 전환 효과를 준다.
+                    yield return StartCoroutine(LoadingEffectManager.Instance.FadeOut(transitionDuration));
+                    yield return new WaitForSeconds(transitionDuration / 2);
+                }
 
                 // 현재 이벤트를 종료한다. (ProcessRandomEvent로 이동)
                 yield break;
@@ -782,11 +790,16 @@ public class DialogueManager : MonoBehaviour
     public delegate void SpecialEvent();
     public Dictionary<string, SpecialEvent> specialEvents = new Dictionary<string, SpecialEvent>();
 
+    private string endingName = "";
+
     // 모든 특수 이벤트를 등록한다.
     private void EnrollSpecialEvents()
     {
         specialEvents["서브스토리 교체"] = SetIncarnageSubStory;
         specialEvents["덱 비우기"] = ClearDeck;
+        specialEvents["엔딩 1"] = Ending1;
+        specialEvents["엔딩 2"] = Ending2;
+        specialEvents["엔딩 3"] = Ending3;
     }
 
     // 특수 이벤트를 실행한다.
@@ -814,6 +827,24 @@ public class DialogueManager : MonoBehaviour
     private void ClearDeck()
     {
         CardManager.Instance.ClearDeck();
+    }
+
+    private void Ending1()
+    {
+        endingName = "모두의 행복";
+        isGameCleared = true;
+    }
+
+    private void Ending2()
+    {
+        endingName = "소박하고 평온한 일상";
+        isGameCleared = true;
+    }
+
+    private void Ending3()
+    {
+        endingName = "가장 완벽한 하루";
+        isGameCleared = true;
     }
     #endregion 특수 이벤트
 
