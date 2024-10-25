@@ -65,6 +65,7 @@ public class ItemInfo : MonoBehaviour
         new Item(ItemType.Item, "마스터키", "마스터키", 1),
         new Item(ItemType.Item, "연구 기록", "연구 기록", 1),
         new Item(ItemType.Item, "신문", "신문", 1),
+        new Item(ItemType.Item, "손전등", "손전등", 1),
         // 능력
         new Item(ItemType.Status, "근력", "근력", 1),
         new Item(ItemType.Status, "민첩성", "민첩성", 1),
