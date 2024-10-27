@@ -49,6 +49,7 @@ public class Card : Poolable
         illust.sprite = cardData.sprite;
         nameTMP.text = cardData.name;
         costTMP.text = cardData.cost.ToString();
+        CardManager.Instance.ModifyCost(this);
         descriptionTMP.text = cardData.description;
         SetDamageDescription();
 
@@ -78,7 +79,8 @@ public class Card : Poolable
     {
         this.cost = cost;
         costTMP.text = cost.ToString();
-        if(color > 0)
+
+        if (color > 0)
         {
             costTMP.color = Color.red;
         }
