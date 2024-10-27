@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Capture
   m_EditorClassIdentifier: 
   name: "\uD3EC\uBC15"
-  description: "\uC801 \uD55C \uBA85\uC744 \uD589\uB3D9 \uBD88\uAC00 \uC0C1\uD0DC\uB85C
-    \uB9CC\uB4ED\uB2C8\uB2E4."
+  description: "\uC801\uC5D0\uAC8C \uCE68\uBB35 \uC2A4\uD0DD\uC744 1 \uBD80\uC5EC\uD569\uB2C8\uB2E4."
   sprite: {fileID: 21300000, guid: e4d2efad351d9324489e396b6366f990, type: 3}
   skills:
   - type: 0
     target: 1
-    amount: 0
-    turnCount: 2
+    amount: 1
+    turnCount: 1
     effectPrefeb: {fileID: 5688369868303141963, guid: 2aea219a0297be045917372e0c19f84e, type: 3}
-  cost: 3
+    sound: {fileID: 0}
+  cost: 5

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Silence!
   m_EditorClassIdentifier: 
   name: "\uC27F!"
-  description: "\uC801\uC5D0\uAC8C \uCE68\uBB35 \uC2A4\uD0DD\uC744 1 \uC90D\uB2C8\uB2E4"
+  description: "\uC801\uC5D0\uAC8C \uCE68\uBB35 \uC2A4\uD0DD\uC744 1 \uBD80\uC5EC\uD569\uB2C8\uB2E4."
   sprite: {fileID: 21300000, guid: a1b8ea294c55f074e8bcda367ef52906, type: 3}
   skills:
   - type: 18
     target: 1
-    amount: 0
+    amount: 1
     turnCount: 1
     effectPrefeb: {fileID: 0}
     sound: {fileID: 0}
