@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\uBC29\uD0C4\uBAA8"
   description: "3\uC758 \uBC29\uC5B4\uB3C4\uB97C \uC5BB\uC2B5\uB2C8\uB2E4."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 9e84f04e771fab44eb0f49fbf6f07da5, type: 3}
   skills:
   - type: 1
     target: 0
