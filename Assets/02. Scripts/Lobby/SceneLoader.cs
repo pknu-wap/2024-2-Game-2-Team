@@ -71,9 +71,10 @@ public class SceneLoader : MonoBehaviour
                 continue;
             }
 
-            if (operation.progress > 0.4f)
+            if (operation.progress >= 0.9f)
             {
                 operation.allowSceneActivation = true;
+
                 yield break;
             }
         }

@@ -91,6 +91,8 @@ public class DataManager : MonoBehaviour
     
     public void StartLoadedGame()
     {
+        LoadData();
+
         // 각자 자리에 삽입한다.
         Player.Instance.LoadHp();
         CardManager.Instance.LoadDeck();
