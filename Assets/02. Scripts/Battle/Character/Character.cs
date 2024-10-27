@@ -26,8 +26,8 @@ public class Character : MonoBehaviour
 {
     [Header("데이터")]
     // HP(체력)
-    protected int currentHp = 100;
-    [SerializeField] protected int maxHp = 100;
+    [SerializeField] protected int currentHp = 100;
+    protected int maxHp = 100;
     [SerializeField] protected int shield = 0;
 
     [Header("능력치")]
