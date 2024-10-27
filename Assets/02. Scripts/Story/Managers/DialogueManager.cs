@@ -612,9 +612,18 @@ public class DialogueManager : MonoBehaviour
         // 검색 수행 후, 
         Dictionary<string, int> usedItems = Items.Instance.RequestItems(requireItems);
 
+        string usedItemNames = "";
+        bool isFirst = true;
+
         // 차례대로 삭제한다.
         foreach (var item in usedItems)
         {
+            if(isFirst == false)
+            {
+                usedItemNames += '#';
+            }
+
+            usedItemNames += item.Key;
             Items.Instance.RemoveItems(item.Key, item.Value);
         }
 
@@ -651,7 +660,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             // Decrease 호출
-            Player.Instance.DecreaseHP(hp);
+            Player.Instance.DecreaseHP(-hp);
             // 빨강 이펙트
         }
     }
