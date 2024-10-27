@@ -217,7 +217,7 @@ public class CardManager : MonoBehaviour
 
     public IEnumerator AddCardToHand(int count)
     {
-        int drawCount = count;
+        int drawCount = Mathf.Min(count, deck.Count + hand.Count + dump.Count);
         // Draw Count 조정
         if (hand.Count + drawCount > maxHand)            
         {
@@ -293,6 +293,11 @@ public class CardManager : MonoBehaviour
     // AddCardToHand 호출 시 함께 사용된다.
     CardData DrawCard()
     {
+        if(deck.Count <= 0)
+        {
+            Debug.LogError("deck이 비었습니다.");
+        }
+
         CardData card = deck[0];
         deck.RemoveAt(0);
         return card;
