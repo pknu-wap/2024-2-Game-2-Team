@@ -137,8 +137,6 @@ public class TutorialManager : MonoBehaviour
     // 컴포넌트를 할당한다.
     private void EnrollComponent()
     {
-        storyBackgroundObject = GameObject.Find("Story BG").GetComponent<Image>();
-        battleBackgroundObject = GameObject.Find("Battle BG").GetComponent<Image>();
         notification = GameObject.Find("Story Notification Panel").GetComponent<StoryNotification>();
     }
 
@@ -408,8 +406,8 @@ public class TutorialManager : MonoBehaviour
         if (csvData["Background"].ToString() is not emptyString)
         {
             // 스토리와 전투를 함께 바꾼다.
-            storyBackgroundObject.sprite = backgroundImages[backgroundTable[csvData["Background"].ToString()]];
-            battleBackgroundObject.sprite = backgroundImages[backgroundTable[csvData["Background"].ToString()]];
+            storyBackgroundObject.sprite = DialogueManager.Instance.GetBackground(csvData["Background"].ToString());
+            battleBackgroundObject.sprite = DialogueManager.Instance.GetBackground(csvData["Background"].ToString());
         }
 
         // 이름 변경 (비어있어도 상관 X)

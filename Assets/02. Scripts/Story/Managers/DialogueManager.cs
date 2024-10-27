@@ -786,6 +786,11 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(ProcessRandomEvent());
     }
 
+    public Sprite GetBackground(string backgroundName)
+    {
+        return backgroundImages[backgroundTable[backgroundName]];
+    }
+
     // 스토리 리스트 교체, 덱 비우기 등 특수한 이벤트를 다룬다.
     #region 특수 이벤트
     public delegate void SpecialEvent();

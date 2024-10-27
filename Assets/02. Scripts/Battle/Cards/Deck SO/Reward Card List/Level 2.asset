@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listName: Level 2
   items:
-  - {fileID: 11400000, guid: 3d566dab9eebf8f49aaad0449f2b1c7b, type: 2}
   - {fileID: 11400000, guid: fa1853870e9e8d04c8edf439eddf109a, type: 2}
   - {fileID: 11400000, guid: bf21aebdf8de4e6469ac7bb675402bc9, type: 2}
   - {fileID: 11400000, guid: 2b098fed143c4b44fb18fc2423d847b3, type: 2}
