@@ -17,7 +17,7 @@ public class ResolutionManager : MonoBehaviour
     private Resolution[] resolutions;
     private List<Resolution> filteredResolutions;
     private List<int> frameRates = new List<int> { 30, 60, 120, 144, 240 };
-    private bool fullscreen;
+    private bool fullscreen = true;
     private int selectedResolutionIndex;
     private int selectedFrameRateIndex;
 
