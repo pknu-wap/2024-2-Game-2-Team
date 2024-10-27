@@ -88,6 +88,7 @@ public class DialogueManager : MonoBehaviour
         {"초원 밤", 6},
         {"예배당", 7},
         {"어두운 숲", 8},
+        {"파란 하늘", 9},
     };
     public Sprite[] backgroundImages;
 
