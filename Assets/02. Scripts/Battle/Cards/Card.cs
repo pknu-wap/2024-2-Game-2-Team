@@ -108,7 +108,7 @@ public class Card : Poolable
             if(Player.Instance.bonusDamage > 0)
             {
                 string colorText = "<color=#" + CardManager.Instance.highlightTextColorCode + ">";
-                totalDamageText = colorText + "<b>" + totalDamage.ToString() + "</b></color>";
+                totalDamageText = colorText + totalDamage.ToString() + "</color>";
             }
             // 없다면 그대로
             else

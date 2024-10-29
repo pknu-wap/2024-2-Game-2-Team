@@ -278,7 +278,7 @@ public class Character : MonoBehaviour
     public void GainBuffAll()
     {
         // 스탯 초기화
-        //ResetStat();
+        ResetStat();
 
         // 모든 적용 중인 버프에 대해
         for (int i = 0; i < buffs.Count; ++i)
@@ -308,15 +308,15 @@ public class Character : MonoBehaviour
                 --i;
             }
 
-            // 추가 데미지 텍스트를 갱신한다.
-            CardManager.Instance.SetExtraDamage();
-
             // 이펙트 재생
 
             // 0.1초 딜레이
             // yield return new WaitForSeconds(0.1f);
         }
-        
+
+        // 카드의 추가 데미지 텍스트를 갱신한다.
+        // CardManager.Instance.SetExtraDamage();
+
         // 아이콘 최신화
         UpdateAllBuffIcon();
     }
