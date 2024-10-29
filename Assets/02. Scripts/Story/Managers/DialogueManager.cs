@@ -812,6 +812,7 @@ public class DialogueManager : MonoBehaviour
     {
         specialEvents["서브스토리 교체"] = SetIncarnageSubStory;
         specialEvents["덱 비우기"] = ClearDeck;
+        specialEvents["가장 강력한 무기"] = ClearDeck;
         specialEvents["엔딩 1"] = Ending1;
         specialEvents["엔딩 2"] = Ending2;
         specialEvents["엔딩 3"] = Ending3;
@@ -844,21 +845,42 @@ public class DialogueManager : MonoBehaviour
         CardManager.Instance.ClearDeck();
     }
 
+    // 업적을 해금한다.
+    private void UnlockAchievementEnergyBeam()
+    {
+        if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
+        {
+            StoveAchievementHandler.UnlockAchievement("ENERGY_BEAM");
+        }
+    }
+
     private void Ending1()
     {
         endingName = "모두의 행복";
+        if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
+        {
+            StoveAchievementHandler.UnlockAchievement("EVERYONES_HAPPINESS");
+        }
         isGameCleared = true;
     }
 
     private void Ending2()
     {
         endingName = "소박하고 평온한 일상";
+        if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
+        {
+            StoveAchievementHandler.UnlockAchievement("PEACEFULL_DAYLIFE");
+        }
         isGameCleared = true;
     }
 
     private void Ending3()
     {
         endingName = "가장 완벽한 하루";
+        if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
+        {
+            StoveAchievementHandler.UnlockAchievement("PERFECT_DAY");
+        }
         isGameCleared = true;
     }
     #endregion 특수 이벤트
