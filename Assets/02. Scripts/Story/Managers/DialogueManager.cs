@@ -812,7 +812,8 @@ public class DialogueManager : MonoBehaviour
     {
         specialEvents["서브스토리 교체"] = SetIncarnageSubStory;
         specialEvents["덱 비우기"] = ClearDeck;
-        specialEvents["가장 강력한 무기"] = ClearDeck;
+        specialEvents["가장 강력한 무기"] = UnlockAchievementEnergyBeam;
+        specialEvents["믿지 않던 신"] = UnlockAchievementNonbeliever;
         specialEvents["엔딩 1"] = Ending1;
         specialEvents["엔딩 2"] = Ending2;
         specialEvents["엔딩 3"] = Ending3;
@@ -847,6 +848,15 @@ public class DialogueManager : MonoBehaviour
 
     // 업적을 해금한다.
     private void UnlockAchievementEnergyBeam()
+    {
+        if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
+        {
+            StoveAchievementHandler.UnlockAchievement("ENERGY_BEAM");
+        }
+    }
+
+    // 업적을 해금한다.
+    private void UnlockAchievementNonbeliever()
     {
         if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
         {
