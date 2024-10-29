@@ -60,4 +60,9 @@ public class SceneMoveButton : MonoBehaviour
 
         alertPanel.SetActive(!alertPanel.activeSelf);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
