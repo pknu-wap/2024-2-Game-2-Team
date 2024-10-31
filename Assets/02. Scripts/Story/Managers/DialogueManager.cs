@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using System.Linq;
+using Stove.PCSDK.NET;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -331,6 +332,12 @@ public class DialogueManager : MonoBehaviour
                 SoundManager.Instance.Play(dataCSV[i]["BGM"].ToString(), SoundType.Bgm, true);
             }
 
+            // 특수 이벤트가 있다면 실행한다.
+            if (dataCSV[i]["Special Event"].ToString() is not emptyString)
+            {
+                ActivateSpecialEvent(dataCSV[i]["Special Event"].ToString());
+            }
+
             // 대화창을 갱신한다. 이 이후의 조건문은, 대화창을 변경한 후 실행되는 애들이다.
             yield return StartCoroutine(DisplayDialogue(dataCSV[i]));
 
@@ -420,12 +427,6 @@ public class DialogueManager : MonoBehaviour
 
                 // hp를 변경한다.
                 ChangePlayerHp(hp);
-            }
-
-            // 특수 이벤트가 있다면 실행한다.
-            if (dataCSV[i].ContainsKey("Special Event") && dataCSV[i]["Special Event"].ToString() is not emptyString)
-            {
-                ActivateSpecialEvent(dataCSV[i]["Special Event"].ToString());
             }
         }
 
@@ -838,6 +839,15 @@ public class DialogueManager : MonoBehaviour
         {
             processableSubEventList.Add(incarnageSubEventList.list[i]);
         }
+
+        if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
+        {
+            StovePCResult result = StovePC.SetStat("TO_INCARNAGE", 1);
+            if (result == StovePCResult.NoError)
+            {
+                result = StovePC.GetAchievement("TO_INCARNAGE_1");
+            }
+        }
     }
 
     // 덱을 모두 버린다.
@@ -851,7 +861,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
         {
-            StoveAchievementHandler.UnlockAchievement("ENERGY_BEAM");
+            StovePCResult result = StovePC.SetStat("ENERGY_BEAM", 1);
+            if (result == StovePCResult.NoError)
+            {
+                result = StovePC.GetAchievement("ENERGY_BEAM_1");
+            }
         }
     }
 
@@ -860,7 +874,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
         {
-            StoveAchievementHandler.UnlockAchievement("ENERGY_BEAM");
+            StovePCResult result = StovePC.SetStat("NONBELIEVER", 1);
+            if (result == StovePCResult.NoError)
+            {
+                result = StovePC.GetAchievement("NONBELIEVER_1");
+            }
         }
     }
 
@@ -869,7 +887,11 @@ public class DialogueManager : MonoBehaviour
         endingName = "모두의 행복";
         if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
         {
-            StoveAchievementHandler.UnlockAchievement("EVERYONES_HAPPINESS");
+            StovePCResult result = StovePC.SetStat("EVERYONES_HAPPINESS", 1);
+            if (result == StovePCResult.NoError)
+            {
+                result = StovePC.GetAchievement("EVERYONES_HAPPINESS_1");
+            }
         }
         isGameCleared = true;
     }
@@ -879,7 +901,11 @@ public class DialogueManager : MonoBehaviour
         endingName = "소박하고 평온한 일상";
         if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
         {
-            StoveAchievementHandler.UnlockAchievement("PEACEFULL_DAYLIFE");
+            StovePCResult result = StovePC.SetStat("PEACEFULL_DAYLIFE", 1);
+            if (result == StovePCResult.NoError)
+            {
+                result = StovePC.GetAchievement("PEACEFULL_DAYLIFE_1");
+            }
         }
         isGameCleared = true;
     }
@@ -889,7 +915,11 @@ public class DialogueManager : MonoBehaviour
         endingName = "가장 완벽한 하루";
         if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
         {
-            StoveAchievementHandler.UnlockAchievement("PERFECT_DAY");
+            StovePCResult result = StovePC.SetStat("PERFECT_DAY", 1);
+            if (result == StovePCResult.NoError)
+            {
+                result = StovePC.GetAchievement("PERFECT_DAY_1");
+            }
         }
         isGameCleared = true;
     }

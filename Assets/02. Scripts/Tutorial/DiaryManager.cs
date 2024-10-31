@@ -170,8 +170,14 @@ public class DiaryManager : MonoBehaviour
         // 업적 달성
         if (isSkiped == false || PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
         {
-            StoveAchievementHandler.UnlockAchievement("COMPLETED_READER_1");
+            StovePCResult result = StovePC.SetStat("COMPLETED_READER", 1);
+            if (result == StovePCResult.NoError)
+            {
+                result = StovePC.GetAchievement("COMPLETED_READER_1");
+            }
         }
+
+        StovePC.GetAllAchievement();
 
         // 튜토리얼 이벤트 시작
         GameManager.Instance.DeactiveTutorialScene();
