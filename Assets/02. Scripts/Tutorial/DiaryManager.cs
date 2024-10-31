@@ -1,3 +1,4 @@
+using Stove.PCSDK.NET;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -160,11 +161,17 @@ public class DiaryManager : MonoBehaviour
         isSelected = true;
     }
 
-    public void FinishDiary()
+    public void FinishDiary(bool isSkiped)
     {
         // 다시 처음으로 돌리고
         currentDialogIndex = 0;
         currentPageIndex = 0;
+
+        // 업적 달성
+        if (isSkiped == false || PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
+        {
+            StoveAchievementHandler.UnlockAchievement("COMPLETED_READER_1");
+        }
 
         // 튜토리얼 이벤트 시작
         GameManager.Instance.DeactiveTutorialScene();

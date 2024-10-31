@@ -176,12 +176,6 @@ public class TutorialManager : MonoBehaviour
                 // 함수를 종료한다.
                 EndEvent(loadedEvent);
 
-                // 업적 달성
-                if (PlatformManager.Instance.platformSetting.platformType == PlatformType.Stove)
-                {
-                    StoveAchievementHandler.UnlockAchievement("COMPLETED_READER");
-                }
-
                 // 메인 스토리로 넘어가기 전에 로딩 효과 추가
                 yield return StartCoroutine(LoadingEffectManager.Instance.FadeOut(transitionDuration));
                 yield return new WaitForSeconds(transitionDuration / 2);
