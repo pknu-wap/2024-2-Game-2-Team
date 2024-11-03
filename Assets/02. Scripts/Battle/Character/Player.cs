@@ -1,8 +1,3 @@
-using System;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-
 public class Player : Character
 {
     #region 싱글톤
@@ -26,8 +21,7 @@ public class Player : Character
 
     public string job;
 
-    [SerializeField] private TMP_Text storyHpText;
-    [SerializeField] private Image storyHpBar;
+    public StatusHP statusHP;
 
     public void Start()
     {
@@ -40,35 +34,10 @@ public class Player : Character
         GainBuffAll();
     }
 
-
-    public void UpdateHPUI()
+    public override void UpdateHPUI()
     {
         base.UpdateHPUI();
-
-        // 스토리도 이미지 변경
-        // HP 바를 뚫으려 하면
-        if (currentHp + shield > maxHp)
-        {
-            // 비율을 맞춰 현재 체력 바의 크기를 줄이고
-            storyHpBar.fillAmount = (float)currentHp / (maxHp + shield);
-        }
-        // 아니라면
-        else
-        {
-            // 그대로 출력한다.
-            storyHpBar.fillAmount = (float)currentHp / maxHp;
-        }
-
-        // 텍스트 변경
-        // 실드가 없다면 현재 체력과 최대 체력을
-        string text = currentHp + "/" + maxHp;
-        // 그게 아니라면
-        if (shield > 0)
-        {
-            // 방어막도 함께 적어준다.
-            text = "(" + currentHp + " + " + shield + ") / " + maxHp;
-        }
-        storyHpText.text = text;
+        statusHP.UpdateHPUI();
     }
 
     public override void DecreaseHP(int damage)
@@ -141,9 +110,9 @@ public class Player : Character
     public void LoadHp()
     {
         currentHp = DataManager.Instance.data.Hp;
-        UpdateHPUI();
-
         job = DataManager.Instance.data.Job;
+
+        UpdateHPUI();
     }
 
     override public void ConsumeSilenceStack()

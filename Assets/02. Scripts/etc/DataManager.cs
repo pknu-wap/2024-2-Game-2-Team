@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -154,7 +153,6 @@ public class DataManager : MonoBehaviour
             data.value = dict[key];
 
             list.Add(data);
-            Debug.Log(data.key);
         }
 
         return list;

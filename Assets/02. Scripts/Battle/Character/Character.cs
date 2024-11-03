@@ -106,7 +106,7 @@ public class Character : MonoBehaviour
     }
 
     // 현재 HP를 갱신한다.
-    public void UpdateHPUI()
+    public virtual void UpdateHPUI()
     {
         // 이미지 변경
         // HP 바를 뚫으려 하면

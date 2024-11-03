@@ -10,6 +10,7 @@ public class CardSlot : MonoBehaviour
     [SerializeField] TMP_Text nameTMP;
     [SerializeField] TMP_Text costTMP;
     [SerializeField] TMP_Text descriptionTMP;
+
     public void Setup(CardData item)
     {
         cardData = item;
