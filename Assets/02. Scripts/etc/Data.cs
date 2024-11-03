@@ -14,7 +14,7 @@ public class Data
     // 체력
     public int hp;
     // 덱
-    public List<CardData> deck;
+    public List<string> deck;
     // 직업
     public string job;
     // 현재 이벤트
@@ -44,7 +44,7 @@ public class Data
         set { hp = value; }
     }
 
-    public List<CardData> Deck
+    public List<string> Deck
     {
         get { return deck; }
         set { deck = value; }

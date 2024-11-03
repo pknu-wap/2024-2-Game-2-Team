@@ -18,16 +18,16 @@ public class EventInfo : MonoBehaviour
         }
 
         DontDestroyOnLoad(Instance);
-        CreateRewardCardListDictionary();
+        CreateEventListDictionary();
     }
 
-    [Header("보상 카드 리스트")]
+    [Header("이벤트 리스트")]
     [SerializeField] private EventDataList eventList;
     // 코드에서 접근하는, listName을 받아 CardList를 반환하는 딕셔너리
     public Dictionary<string, EventData> eventListDict;
 
     // listName을 키로, CardList를 밸류로 갖는 Dictionary를 생성한다.
-    private void CreateRewardCardListDictionary()
+    private void CreateEventListDictionary()
     {
         eventListDict = new Dictionary<string, EventData>();
 

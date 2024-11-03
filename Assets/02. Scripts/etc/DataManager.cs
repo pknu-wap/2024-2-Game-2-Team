@@ -55,7 +55,7 @@ public class DataManager : MonoBehaviour
             // Json을 Data 형식으로 전환
             data = JsonUtility.FromJson<Data>(decodedJson);
 
-            DebugData(data);
+            // DebugData(data);
         }
     }
 
@@ -93,7 +93,7 @@ public class DataManager : MonoBehaviour
         sb.AppendFormat(" - Job : {0}\n", data.Job);
         for (int i = 0; i < data.deck.Count; i++)
         {
-            sb.AppendFormat(" - deck[{0}] : {1}\n", i, data.deck[i].name);
+            sb.AppendFormat(" - deck[{0}] : {1}\n", i, data.deck[i]);
         }
         sb.AppendFormat(" - Current Event : {0}\n", data.CurrentEvent);
 
