@@ -231,7 +231,6 @@ public class DialogueManager : MonoBehaviour
         // 게임이 끝나지 않았다면 무한 반복
         while (isGameCleared == false)
         {
-            
             // 현재 이벤트가 없다면
             if(currentEvent == null)
             {
@@ -766,35 +765,105 @@ public class DialogueManager : MonoBehaviour
     public void SaveDialogueData()
     {
         //딜레이 딕셔너리
-        DataManager.Instance.data.DelayDictionary = DataManager.Instance.DictionaryToDictionaryData(delayDictionary);
+        Dictionary<string, int> delayDict = ConvertEventToString(delayDictionary);
+        DataManager.Instance.data.DelayDictionary = DataManager.Instance.DictionaryToList(delayDict);
         //현재 진행중인 이벤트
-        DataManager.Instance.data.CurrentEvent = currentEvent;
+        DataManager.Instance.data.CurrentEvent = currentEvent.eventName;
         //진행 가능한 메인 이벤트 리스트
-        DataManager.Instance.data.ProcessableMainEventList = processableMainEventList;
+        DataManager.Instance.data.ProcessableMainEventList = ConvertEventToString(processableMainEventList);
         //진행 가능한 서브 이벤트 리스트
-        DataManager.Instance.data.ProcessableSubEventList = processableSubEventList;
+        DataManager.Instance.data.ProcessableSubEventList = ConvertEventToString(processableSubEventList);
     }
 
     public void LoadDialogueData()
     {
         //딜레이 딕셔너리
-        delayDictionary = DataManager.Instance.DictionaryDataToDictinary(DataManager.Instance.data.DelayDictionary);
+        Dictionary<string, int> delayDict = DataManager.Instance.ListToDictionary(DataManager.Instance.data.delayDictionary);
+        delayDictionary = ConvertStringToEvent(delayDict);
         //현재 진행중인 이벤트
-        currentEvent = DataManager.Instance.data.CurrentEvent;
+        currentEvent = EventInfo.Instance.GetEvent(DataManager.Instance.data.CurrentEvent);
         //진행 가능한 메인 이벤트 리스트
-        processableMainEventList = DataManager.Instance.data.ProcessableMainEventList;
+        processableMainEventList = ConvertStringToEvent(DataManager.Instance.data.ProcessableMainEventList);
         //진행 가능한 서브 이벤트 리스트
-        processableSubEventList = DataManager.Instance.data.ProcessableSubEventList;
+        processableSubEventList = ConvertStringToEvent(DataManager.Instance.data.ProcessableSubEventList);
     }
 
-    public IEnumerator ProcessLoadedEvent(EventData loadedEvent)
+    private List<EventData> ConvertStringToEvent(List<string> stringList)
     {
-        // 로드한 이벤트를 진행한 다음
-        yield return StartCoroutine(ProcessEvent(loadedEvent));
+        if (stringList == null)
+        {
+            return new List<EventData>();
+        }
 
-        // 랜덤한 이벤트를 플레이한다.
-        StartCoroutine(ProcessRandomEvent());
+        List<EventData> eventList = new List<EventData>();
+
+        for (int i = 0; i < stringList.Count; i++)
+        {
+            eventList.Add(EventInfo.Instance.GetEvent(stringList[i]));
+        }
+
+        return eventList;
     }
+
+    private Dictionary<EventData, int> ConvertStringToEvent(Dictionary<string, int> stringDict)
+    {
+        if (stringDict == null)
+        {
+            return new Dictionary<EventData, int>();
+        }
+
+        Dictionary<EventData, int> eventList = new Dictionary<EventData, int>();
+
+        foreach (string key in stringDict.Keys)
+        {
+            eventList[EventInfo.Instance.GetEvent(key)] = stringDict[key];
+        }
+
+        return eventList;
+    }
+
+    private List<string> ConvertEventToString(List<EventData> eventList)
+    {
+        if (eventList == null)
+        {
+            return new List<string>();
+        }
+
+        List<string> stringList = new List<string>();
+
+        for (int i = 0; i < eventList.Count; i++)
+        {
+            stringList.Add(eventList[i].eventName);
+        }
+
+        return stringList;
+    }
+
+    private Dictionary<string, int> ConvertEventToString(Dictionary<EventData, int> eventDict)
+    {
+        if (eventDict == null)
+        {
+            return new Dictionary<string, int>();
+        }
+        
+        Dictionary<string, int> stringDict = new Dictionary<string, int>();
+
+        foreach (EventData key in eventDict.Keys)
+        {
+            stringDict[key.eventName] = eventDict[key];
+        }
+
+        return stringDict;
+    }
+
+    //public IEnumerator ProcessLoadedEvent(EventData loadedEvent)
+    //{
+    //    // 로드한 이벤트를 진행한 다음
+    //    yield return StartCoroutine(ProcessEvent(loadedEvent));
+
+    //    // 랜덤한 이벤트를 플레이한다.
+    //    StartCoroutine(ProcessRandomEvent());
+    //}
 
     public Sprite GetBackground(string backgroundName)
     {
