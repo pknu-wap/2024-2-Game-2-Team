@@ -180,7 +180,7 @@ public class DialogueManager : MonoBehaviour
     // 시작 이벤트 리스트를 전체 이벤트 리스트에 가져온다.
     private void SetTotalEventList()
     {
-        for(int i = 0; i < startEventList.list.Length; ++i)
+        for(int i = 0; i < startEventList.list.Count; ++i)
         {
             AddEventToList(startEventList.list[i]);
         }
@@ -835,7 +835,7 @@ public class DialogueManager : MonoBehaviour
         delayDictionary.Clear();
 
         // 인카니지 서브 스토리로 새로 써넣는다.
-        for (int i = 0; i < incarnageSubEventList.list.Length; ++i)
+        for (int i = 0; i < incarnageSubEventList.list.Count; ++i)
         {
             processableSubEventList.Add(incarnageSubEventList.list[i]);
         }

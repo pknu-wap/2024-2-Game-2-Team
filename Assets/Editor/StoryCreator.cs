@@ -77,6 +77,8 @@ public class StoryCreator : Editor
             currentAsset.eventID = type;
             // 시작 인덱스를 적어준다.
             currentAsset.startIndex = i;
+            // 이벤트 이름을 적어준다.
+            currentAsset.eventName = currentId;
 
             // 빈칸이 나올 때까지 스킵
             while (true)
