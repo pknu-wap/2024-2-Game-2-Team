@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventListCreator : Editor
 {
-    public static string listPath = "Assets/02. Scripts/Story/EventData SO/Events/Data List/EventList";
+    public static string listPath = "Assets/02. Scripts/Story/EventData SO/Events/Data List/EventList.asset";
 
     [MenuItem("Assets/Create Story/Create Event List")]
     public static void CreateEventList()
@@ -44,6 +44,12 @@ public class EventListCreator : Editor
     private static void ClearEventList(string listPath)
     {
         EventDataList eventDataList = AssetDatabase.LoadAssetAtPath<EventDataList>(listPath);
+
+        if (eventDataList != null)
+        {
+            Debug.Log(listPath + "가 올바르지 않습니다.");
+            return;
+        }
 
         eventDataList.list = new List<EventData>();
         Debug.Log(listPath + "를 비웠습니다.");
