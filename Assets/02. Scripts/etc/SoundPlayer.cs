@@ -7,7 +7,7 @@ public class SoundPlayer : MonoBehaviour
 
     public void PlaySound()
     {
-        if(SoundManager.Instance != null)
+        if(SoundManager.Instance == null)
         {
             Debug.LogError("SoundManager가 없습니다.");
             return;
