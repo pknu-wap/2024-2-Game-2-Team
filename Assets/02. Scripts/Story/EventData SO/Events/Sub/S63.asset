@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S63
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S63
   delay: 18
   startIndex: 833
   endIndex: 844

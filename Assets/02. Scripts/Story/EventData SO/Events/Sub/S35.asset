@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S35
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S35
   delay: 0
   startIndex: 392
   endIndex: 397

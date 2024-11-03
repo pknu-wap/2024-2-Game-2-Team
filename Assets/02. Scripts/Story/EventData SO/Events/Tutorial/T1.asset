@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: T1
   m_EditorClassIdentifier: 
   eventID: 0
+  eventName: T1
   delay: 0
   startIndex: 0
   endIndex: 34

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S48
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S48
   delay: 0
   startIndex: 616
   endIndex: 628

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S78
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S78
   delay: 0
   startIndex: 1076
   endIndex: 1096

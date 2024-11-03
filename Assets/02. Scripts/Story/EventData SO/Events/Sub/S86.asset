@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S86
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S86
   delay: 10
   startIndex: 1260
   endIndex: 1262

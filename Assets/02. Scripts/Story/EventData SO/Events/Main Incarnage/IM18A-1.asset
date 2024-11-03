@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IM18A-1
   m_EditorClassIdentifier: 
   eventID: 3
+  eventName: IM18A-1
   delay: 0
   startIndex: 578
   endIndex: 591

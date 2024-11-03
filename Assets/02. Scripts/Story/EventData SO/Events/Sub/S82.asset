@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S82
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S82
   delay: 20
   startIndex: 1179
   endIndex: 1182

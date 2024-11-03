@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S52
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S52
   delay: 0
   startIndex: 723
   endIndex: 741

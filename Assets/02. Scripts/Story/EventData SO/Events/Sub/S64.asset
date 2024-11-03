@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S64
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S64
   delay: 8
   startIndex: 848
   endIndex: 851

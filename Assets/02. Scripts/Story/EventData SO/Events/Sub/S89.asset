@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S89
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S89
   delay: 0
   startIndex: 1282
   endIndex: 1312

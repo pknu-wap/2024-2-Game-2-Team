@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S25
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S25
   delay: 0
   startIndex: 205
   endIndex: 217

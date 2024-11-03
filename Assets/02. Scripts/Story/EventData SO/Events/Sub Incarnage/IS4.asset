@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IS4
   m_EditorClassIdentifier: 
   eventID: 4
+  eventName: IS4
   delay: 0
   startIndex: 45
   endIndex: 47

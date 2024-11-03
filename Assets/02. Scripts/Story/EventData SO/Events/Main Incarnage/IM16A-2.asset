@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IM16A-2
   m_EditorClassIdentifier: 
   eventID: 3
+  eventName: IM16A-2
   delay: 0
   startIndex: 595
   endIndex: 621

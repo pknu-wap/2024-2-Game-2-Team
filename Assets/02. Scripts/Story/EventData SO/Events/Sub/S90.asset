@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S90
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S90
   delay: 0
   startIndex: 1316
   endIndex: 1332

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RS64-3
   m_EditorClassIdentifier: 
   eventID: 2
+  eventName: RS64-3
   delay: 0
   startIndex: 1175
   endIndex: 1177

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S31
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S31
   delay: 0
   startIndex: 347
   endIndex: 362
