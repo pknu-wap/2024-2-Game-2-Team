@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S32
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S32
   delay: 4
   startIndex: 366
   endIndex: 377

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RS56-2
   m_EditorClassIdentifier: 
   eventID: 2
+  eventName: RS56-2
   delay: 0
   startIndex: 1009
   endIndex: 1019

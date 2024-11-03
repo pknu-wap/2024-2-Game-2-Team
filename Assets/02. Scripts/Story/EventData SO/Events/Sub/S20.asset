@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S20
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S20
   delay: 6
   startIndex: 174
   endIndex: 176

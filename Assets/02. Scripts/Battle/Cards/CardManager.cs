@@ -580,13 +580,37 @@ public class CardManager : MonoBehaviour
     // deck을 Data 객체에 저장한다.
     public void SaveDeck()
     {
-        DataManager.Instance.data.Deck = deck.ToList();
+        DataManager.Instance.data.Deck = ConvertCardDataListToStringList(deck);
     }
 
     public void LoadDeck()
     {
-        deck = DataManager.Instance.data.Deck.ToList();
+        deck = ConvertStringListToCardDataList(DataManager.Instance.data.Deck);
         CardInventory.instance.UpdateAllCardSlot();
+    }
+
+    private List<string> ConvertCardDataListToStringList(List<CardData> cards)
+    {
+        List<string> list = new List<string>();
+
+        for (int i = 0; i < cards.Count; ++i)
+        {
+            list.Add(cards[i].name);
+        }
+
+        return list;
+    }
+
+    private List<CardData> ConvertStringListToCardDataList(List<string> cardNames)
+    {
+        List<CardData> list = new List<CardData>();
+
+        for (int i = 0; i < cardNames.Count; ++i)
+        {
+            list.Add(CardDataInfo.Instance.GetCard(cardNames[i]));
+        }
+
+        return list;
     }
 
     #region MyCard

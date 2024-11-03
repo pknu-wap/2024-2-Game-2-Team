@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RS77-1
   m_EditorClassIdentifier: 
   eventID: 2
+  eventName: RS77-1
   delay: 0
   startIndex: 1348
   endIndex: 1353

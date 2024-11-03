@@ -1,4 +1,5 @@
 // 김민철
+using System;
 using UnityEngine;
 
 // 카드의 종류
@@ -53,6 +54,7 @@ public class Skill
 }
 
 // 유니티 에디터, Project 뷰의 Create 메뉴에 아래 항목을 추가한다.
+[Serializable]
 [CreateAssetMenu(fileName = "Card Data", menuName = "Scriptable Object/Card Data", order = 0)]
 public class CardData : ScriptableObject
 {

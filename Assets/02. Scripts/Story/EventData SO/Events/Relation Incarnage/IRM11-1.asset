@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IRM11-1
   m_EditorClassIdentifier: 
   eventID: 5
+  eventName: IRM11-1
   delay: 0
   startIndex: 118
   endIndex: 120

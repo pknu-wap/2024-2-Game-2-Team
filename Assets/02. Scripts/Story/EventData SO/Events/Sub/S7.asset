@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S7
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S7
   delay: 10
   startIndex: 47
   endIndex: 68

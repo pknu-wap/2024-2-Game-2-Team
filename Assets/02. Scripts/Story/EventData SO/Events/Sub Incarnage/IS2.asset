@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IS2
   m_EditorClassIdentifier: 
   eventID: 4
+  eventName: IS2
   delay: 18
   startIndex: 12
   endIndex: 17

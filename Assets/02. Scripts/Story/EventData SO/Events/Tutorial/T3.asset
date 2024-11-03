@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: T3
   m_EditorClassIdentifier: 
   eventID: 0
+  eventName: T3
   delay: 0
   startIndex: 74
   endIndex: 106

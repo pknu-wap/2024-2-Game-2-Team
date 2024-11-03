@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IS3
   m_EditorClassIdentifier: 
   eventID: 4
+  eventName: IS3
   delay: 0
   startIndex: 21
   endIndex: 41

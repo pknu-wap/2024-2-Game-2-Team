@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
-public class DictionaryData<TKey, TValue>
+public class DictionaryData
 {
-    public TKey key;
-    public TValue value;
+    public string key;
+    public int value;
 }
 
 [Serializable]
@@ -14,16 +14,16 @@ public class Data
     // 체력
     public int hp;
     // 덱
-    public List<CardData> deck;
+    public List<string> deck;
     // 직업
     public string job;
     // 현재 이벤트
-    public EventData currentEvent;
+    public string currentEvent;
     // 이벤트 리스트
-    public List<EventData> processableMainEventList;
-    public List<EventData> processableSubEventList;
+    public List<string> processableMainEventList;
+    public List<string> processableSubEventList;
     // 딜레이 딕셔너리
-    public List<DictionaryData<EventData, int>> delayDictionary;
+    public List<DictionaryData> delayDictionary;
     // 아이템 인벤토리
     public List<Item> items = new List<Item>();
     //옵션
@@ -44,7 +44,7 @@ public class Data
         set { hp = value; }
     }
 
-    public List<CardData> Deck
+    public List<string> Deck
     {
         get { return deck; }
         set { deck = value; }
@@ -56,25 +56,25 @@ public class Data
         set { job = value; }
     }
 
-    public EventData CurrentEvent
+    public string CurrentEvent
     {
         get { return currentEvent; }
         set { currentEvent = value; }
     }
 
-    public List<EventData> ProcessableMainEventList
+    public List<string> ProcessableMainEventList
     {
         get { return processableMainEventList; }
         set { processableMainEventList = value; }
     }
 
-    public List<EventData> ProcessableSubEventList
+    public List<string> ProcessableSubEventList
     {
         get { return processableSubEventList; }
         set { processableSubEventList = value; }
     }
 
-    public List<DictionaryData<EventData, int>> DelayDictionary
+    public List<DictionaryData> DelayDictionary
     {
         get { return delayDictionary; }
         set { delayDictionary = value; }

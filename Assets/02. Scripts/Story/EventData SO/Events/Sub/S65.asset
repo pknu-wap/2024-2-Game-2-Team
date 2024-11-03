@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S65
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S65
   delay: 4
   startIndex: 855
   endIndex: 857

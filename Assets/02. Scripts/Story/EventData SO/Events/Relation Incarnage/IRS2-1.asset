@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IRS2-1
   m_EditorClassIdentifier: 
   eventID: 5
+  eventName: IRS2-1
   delay: 0
   startIndex: 129
   endIndex: 157

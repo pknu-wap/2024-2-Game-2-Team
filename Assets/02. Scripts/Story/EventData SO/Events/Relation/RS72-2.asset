@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RS72-2
   m_EditorClassIdentifier: 
   eventID: 2
+  eventName: RS72-2
   delay: 0
   startIndex: 1302
   endIndex: 1307

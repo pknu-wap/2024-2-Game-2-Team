@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IM13B
   m_EditorClassIdentifier: 
   eventID: 3
+  eventName: IM13B
   delay: 0
   startIndex: 648
   endIndex: 677

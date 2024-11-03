@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IM8
   m_EditorClassIdentifier: 
   eventID: 3
+  eventName: IM8
   delay: 0
   startIndex: 177
   endIndex: 190

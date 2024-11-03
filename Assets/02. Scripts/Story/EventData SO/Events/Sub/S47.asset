@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S47
   m_EditorClassIdentifier: 
   eventID: 1
+  eventName: S47
   delay: 20
   startIndex: 606
   endIndex: 612

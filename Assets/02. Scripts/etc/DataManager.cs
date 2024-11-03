@@ -1,7 +1,8 @@
-using System.IO;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using UnityEngine;
-
 
 public class DataManager : MonoBehaviour
 {
@@ -53,6 +54,8 @@ public class DataManager : MonoBehaviour
 
             // Json을 Data 형식으로 전환
             data = JsonUtility.FromJson<Data>(decodedJson);
+
+            // DebugData(data);
         }
     }
 
@@ -81,6 +84,42 @@ public class DataManager : MonoBehaviour
         File.WriteAllText(filePath, encodedJson);
     }
 
+    private void DebugData(Data data)
+    {
+        // Print Stat Info
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine("Data");
+        sb.AppendFormat(" - Hp : {0}\n", data.Hp);
+        sb.AppendFormat(" - Job : {0}\n", data.Job);
+        for (int i = 0; i < data.deck.Count; i++)
+        {
+            sb.AppendFormat(" - deck[{0}] : {1}\n", i, data.deck[i]);
+        }
+        sb.AppendFormat(" - Current Event : {0}\n", data.CurrentEvent);
+
+        for (int i = 0; i < data.processableMainEventList.Count; i++)
+        {
+            sb.AppendFormat(" - processableMainEventList[{0}] : {1}\n", i, data.processableMainEventList[i]);
+        }
+
+        for (int i = 0; i < data.processableSubEventList.Count; i++)
+        {
+            sb.AppendFormat(" - processableSubEventList[{0}] : {1}\n", i, data.processableSubEventList[i]);
+        }
+
+        for(int i = 0; i < data.delayDictionary.Count; ++i)
+        {
+            sb.AppendFormat(" - delayDictionary : {0}\n", data.delayDictionary[i].key);
+        }
+
+        for (int i = 0; i < data.items.Count; i++)
+        {
+            sb.AppendFormat(" - items[{0}] : {1}\n", i, data.items[i].name);
+        }
+
+        Debug.LogError(sb.ToString());
+    }
+
     public void DeleteData()
     {
         if (IsFileExist())
@@ -101,35 +140,36 @@ public class DataManager : MonoBehaviour
         SoundManager.Instance.LoadVolumeSettings();
         ResolutionManager.Instance.LoadResolutionSettings();
 
-        StartCoroutine(DialogueManager.Instance.ProcessLoadedEvent(data.CurrentEvent));
+        StartCoroutine(DialogueManager.Instance.ProcessRandomEvent());
     }
 
-    // Dictionary 형을 DicionaryData의 리스트로 형변환
-    public List<DictionaryData<EventData, int>> DictionaryToDictionaryData(Dictionary<EventData, int> dic)
+    public List<DictionaryData> DictionaryToList(Dictionary<string, int> dict)
     {
-        List<DictionaryData<EventData, int>> dictionaryDatas = new List<DictionaryData<EventData, int>>();
+        List<DictionaryData> list = new List<DictionaryData>();
 
-        foreach(EventData Event in dic.Keys)
+        foreach (string key in dict.Keys)
         {
-            DictionaryData<EventData, int> dictionaryData = new DictionaryData<EventData, int>();
-            dictionaryData.key = Event;
-            dictionaryData.value = dic[Event];
-            dictionaryDatas.Add(dictionaryData);
+            DictionaryData data = new DictionaryData();
+            data.key = key;
+            data.value = dict[key];
+
+            list.Add(data);
+            Debug.Log(data.key);
         }
 
-        return dictionaryDatas;
+        return list;
     }
 
-    // DicionaryData의 리스트를 Dicionary로 형변환
-    public Dictionary<EventData, int> DictionaryDataToDictinary(List<DictionaryData<EventData, int>> dicDatas)
+    public Dictionary<string, int> ListToDictionary(List<DictionaryData> list)
     {
-        Dictionary<EventData, int> dic = new Dictionary<EventData, int>();
-        foreach(DictionaryData<EventData, int> dicData in dicDatas)
+        Dictionary<string, int> dict = new Dictionary<string, int>();
+
+        foreach (DictionaryData data in list)
         {
-            dic[dicData.key] = dicData.value;
+            dict[data.key] = data.value;
         }
 
-        return dic;
+        return dict;
     }
 
     public bool IsFileExist()
