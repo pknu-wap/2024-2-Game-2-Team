@@ -77,3 +77,6 @@ TagManager:
   - name: Blocker
     uniqueID: 459307179
     locked: 0
+  - name: Ending
+    uniqueID: 1380013141
+    locked: 0

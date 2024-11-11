@@ -416,15 +416,15 @@ public class Items : MonoBehaviour
         // 아이템이 있다면
         if (findedIndex != -1)
         {
+            if (items[findedIndex].count <= count)
+            {
+                items.RemoveAt(findedIndex);
+
+                return;
+            }
+
             // 수량을 감소
             items[findedIndex].count -= count;
-
-            // 아이템이 없다면
-            if (items[findedIndex].count <= 0)
-            {
-                // 인벤토리에서 아이템 삭제
-                items.RemoveAt(findedIndex);
-            }
 
             // 인벤토리 갱신
             UpdateAllSlots();
